@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@/libjpeg@PNGLIB_MAJOR@@PNGLIB_MINOR@
+
+Name: libjpeg
+Description: Loads and saves JPEG files
+Version: @JPEGLIB_VERSION@
+Libs: -L${libdir} -lpng@JPEGLIB_MAJOR@@JPEGLIB_MINOR@
+Libs.private: @LIBS@
+Cflags: -I${includedir}
