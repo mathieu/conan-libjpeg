@@ -1,4 +1,4 @@
-PROJECT(rdjpgcom C)
+PROJECT(rdjpgcom C CXX)
 cmake_minimum_required(VERSION 2.8)
 
 include(conanbuildinfo.cmake)
