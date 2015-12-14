@@ -15,30 +15,15 @@ if __name__ == "__main__":
 
 
     if platform.system() == "Windows":
-        compiler = '-s compiler="Visual Studio" -s compiler.version=12 '
+        compiler = '-s compiler="Visual Studio" -s compiler.version=14 '
         # Static x86
-        test(compiler + '-s arch=x86 -s build_type=Debug -s compiler.runtime=MDd -o libjpeg:shared=False')
-        test(compiler + '-s arch=x86 -s build_type=Debug -s compiler.runtime=MTd -o libjpeg:shared=False')
-        test(compiler + '-s arch=x86 -s build_type=Release -s compiler.runtime=MD -o libjpeg:shared=False')
-        test(compiler + '-s arch=x86 -s build_type=Release -s compiler.runtime=MT -o libjpeg:shared=False')
+        test(compiler + '-s arch=x86 -s build_type=Debug -s compiler.runtime=MDd ')
+        test(compiler + '-s arch=x86 -s build_type=Release -s compiler.runtime=MD ')
 
         # Static x86_64
-        test(compiler + '-s arch=x86_64 -s build_type=Debug -s compiler.runtime=MDd -o libjpeg:shared=False')
-        test(compiler + '-s arch=x86_64 -s build_type=Debug -s compiler.runtime=MTd -o libjpeg:shared=False')
-        test(compiler + '-s arch=x86_64 -s build_type=Release -s compiler.runtime=MD -o libjpeg:shared=False')
-        test(compiler + '-s arch=x86_64 -s build_type=Release -s compiler.runtime=MT -o libjpeg:shared=False')
+        test(compiler + '-s arch=x86_64 -s build_type=Debug -s compiler.runtime=MDd ')
+        test(compiler + '-s arch=x86_64 -s build_type=Release -s compiler.runtime=MD ')
 
-        # Shared x86
-        test(compiler + '-s arch=x86 -s build_type=Debug -s compiler.runtime=MDd -o libjpeg:shared=True')
-        test(compiler + '-s arch=x86 -s build_type=Debug -s compiler.runtime=MTd -o libjpeg:shared=True')
-        test(compiler + '-s arch=x86 -s build_type=Release -s compiler.runtime=MD -o libjpeg:shared=True')
-        test(compiler + '-s arch=x86 -s build_type=Release -s compiler.runtime=MT -o libjpeg:shared=True')
-
-        # Shared x86_64
-        test(compiler + '-s arch=x86_64 -s build_type=Debug -s compiler.runtime=MDd -o libjpeg:shared=True')
-        test(compiler + '-s arch=x86_64 -s build_type=Debug -s compiler.runtime=MTd -o libjpeg:shared=True')
-        test(compiler + '-s arch=x86_64 -s build_type=Release -s compiler.runtime=MD -o libjpeg:shared=True')
-        test(compiler + '-s arch=x86_64 -s build_type=Release -s compiler.runtime=MT -o libjpeg:shared=True')
 
     else:  # Compiler and version not specified, please set it in your home/.conan/conan.conf (Valid for Macos and Linux)
         # if not os.getenv("TRAVIS", False):
@@ -51,9 +36,5 @@ if __name__ == "__main__":
         #     test('-s arch=x86 -s build_type=Release -o libjpeg:shared=True')
 
         # Static x86_64
-        test('-s arch=x86_64 -s build_type=Debug -o libjpeg:shared=False')
-        test('-s arch=x86_64 -s build_type=Release -o libjpeg:shared=False')
-
-        # Shared x86_64
-        test('-s arch=x86_64 -s build_type=Debug -o libjpeg:shared=True')
-        test('-s arch=x86_64 -s build_type=Release -o libjpeg:shared=True')
+        test('-s arch=x86_64 -s build_type=Debuge ')
+        test('-s arch=x86_64 -s build_type=Release ')
